@@ -1,0 +1,143 @@
+{%include "uheader.html" %}
+<head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+
+
+</head>
+<div class="page-nav no-margin row" xmlns="http://www.w3.org/1999/html">
+                   <div class="container">
+                       <div class="row">
+                           <h2>Meal Planner</h2>
+                           <ul>
+                               <li> <a href="#"><i class="fas fa-home"></i> UserHome</a></li>
+                               <li><i class="fas fa-angle-double-right"></i>Food Diet</li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+<div style="margin-top:0px;" class="row">
+
+      </div>
+
+
+
+<br>
+<table id="customers" align="center">
+  <tr>
+    <th>BreakFast</th>
+    <th>Snack 1</th>
+      <th>Lunch</th>
+    <th>Snack 2</th>
+      <th>Dinner</th>
+          <th>Snack 3</th>
+
+  </tr>
+	<tr><td><strong>2 to 3 choice of carbohydrates</strong></td>
+        <td><strong>Egg</strong></td>
+        <td><strong>3 to 4 choice of carbohydrates</strong></td>
+        <td><strong>Glass of lime juice</strong></td>
+        <td><strong>2 rotis or multigrain roties</strong></td>
+        <td><strong>Regular cup of fat free milk</strong></td>
+
+
+    </tr>
+
+<tr><td><strong>Eat protein rich</strong></td>
+        <td><strong>Butter milk</strong></td>
+        <td><strong>Brown rice or milets</strong></td>
+        <td><strong>Mixed fruit juice</strong></td>
+        <td><strong>Vegetable or fat, freely</strong></td>
+        <td><strong></strong></td>
+
+
+    </tr>
+
+<tr><td><strong>Rawa idlis</strong></td>
+        <td><strong></strong></td>
+        <td><strong>Eat protein rich </strong></td>
+        <td><strong>Dry fruits</strong></td>
+        <td><strong>Eat protiein rich food</strong></td>
+        <td><strong></strong></td>
+
+
+    </tr>
+
+
+    <tr><td><strong>Regular cup of fat-free milk</strong></td>
+        <td><strong></strong></td>
+        <td><strong>Fish, meat, chicken, eggs</strong></td>
+        <td><strong></strong></td>
+        <td><strong>Paneer</strong></td>
+        <td><strong></strong></td>
+    </tr>
+
+        <tr><td><strong>Cup of black tea</strong></td>
+        <td><strong></strong></td>
+        <td><strong>Veggies</strong></td>
+        <td><strong></strong></td>
+        <td><strong>Fruits</strong></td>
+        <td><strong></strong></td>
+
+
+    </tr>
+
+
+
+    </table>
+
+<br><br><br><br>
+<section class="our-blog row">
+
+
+        		<div class="blog-row row">
+        			<div class="col-lg-4 col-md-6">
+        				<div class="single-blog">
+
+                                 <div class="chart" id="barchart">
+
+
+</div>
+        				</div>
+        			</div>
+
+
+
+
+        		</div>
+
+
+
+
+         </section>
+
+
+
+{%include "footer.html" %}

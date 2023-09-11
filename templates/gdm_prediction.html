@@ -1,0 +1,269 @@
+{%include "uheader.html" %}
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+
+</head>
+
+<div class="page-nav no-margin row" xmlns="http://www.w3.org/1999/html">
+                   <div class="container">
+                       <div class="row">
+                           <h2>Gestational Diabetes Prediction</h2>
+                           <ul>
+                               <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                               <li><i class="fas fa-angle-double-right"></i>GDM Prediction</li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+
+
+<div style="margin-top:0px;" class="row">
+
+      </div>
+<form action="prediction" method="post">
+      <div class="row contact-rooo">
+
+
+
+           <div class="row w-100">
+
+ {% if result %}
+
+          {% if result=='NEGATIVE' %}
+
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <center><h5>Prediction Results : <font color="green" size="+2">NEGATIVE </font></h5></center>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <center> <h5> <font color="blue" size="+2">(Stay Healthy) </font></h5></center>
+            {% else %}
+                    <center>   <h5>Prediction Results : <font color="red" size="+2">POSITIVE</font></h5> </center>&nbsp;
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               &nbsp;&nbsp; <center>  <a href="fooddiet"> <font color="blue" size="+1">View FoodDiet </font></h3></a></center>
+{% endif %}
+
+          {% endif %}
+            <div style="padding:20px" class="col-sm-8">
+
+                <div class="row">
+                    <div class="col-sm-8">
+                         <label>Age:</label>
+
+                          <input type="text" placeholder="Enter Age" name="age" class="form-control input-sm" required >
+                        </div>
+                </div>
+  <div class="row">
+                 <div class="col-sm-8">
+                         <label>No of Pregnancy :</label>
+                      <input type="text" placeholder="Enter No of Pregnancy" name="npg" class="form-control input-sm" required >
+                        </div>
+                </div>
+                <div style="margin-top:10px;" class="row">
+
+                    <div class="col-sm-8">
+                        <label>Gestation in previous Pregnancy:</label>
+                    <select class="form-control" id="weather" name="gpp" required>
+		       		       <option value=""> --- Select ---</option>
+                        <option value="0">0</option>
+			        <option value="1">1</option>
+    <option value="2">2</option>
+			         </select>
+
+                    </div>
+                </div>
+
+ <div style="margin-top:10px;" class="row">
+             <div class="col-sm-8">
+                         <label>BMI:</label>
+
+               <input type="text" placeholder="Enter BMI Value" name="bmi" class="form-control input-sm" required >
+                                        </div>
+ </div>
+
+
+ <div style="margin-top:10px;" class="row">
+             <div class="col-sm-8">
+                         <label>HDL:</label>
+
+		       	<input type="text" placeholder="Enter HDL value" name="hdl" class="form-control input-sm" required >
+                                        </div>
+ </div>
+
+
+ <div style="margin-top:10px;" class="row">
+             <div class="col-sm-8">
+                         <label>Family history of diabetes:</label>
+
+
+               <select class="form-control" id="weather" name="fhd" required>
+		       		       <option value=""> --- Select ---</option>
+                   <option value="1">Yes</option>
+			        <option value="0">No</option>
+			         </select>
+
+
+                            </div>
+ </div>
+
+ <div style="margin-top:10px;" class="row">
+             <div class="col-sm-8">
+                         <label>Unexplained Prenetal Loss:</label>
+                 <select class="form-control" id="weather" name="upl" required>
+		       		       <option value=""> --- Select ---</option>
+                     <option value="1">Yes</option>
+			        <option value="0">No</option>
+			         </select>
+                            </div>
+ </div>
+
+                 <div style="margin-top:10px;" class="row">
+             <div class="col-sm-8">
+                         <label>Large Child or Birth Default:</label>
+
+                 <select class="form-control" id="weather" name="bd" required>
+                           		       <option value=""> --- Select ---</option>
+		       		          <option value="1">Yes</option>
+			        <option value="0">No</option>
+			         </select>
+                          </div>
+ </div>
+
+<div style="margin-top:10px;" class="row">
+             <div class="col-sm-8">
+                         <label>PCOS:</label>
+
+
+                 <select class="form-control" id="weather" name="pcos" required>
+                           		       <option value=""> --- Select ---</option>
+		       		          <option value="1">Yes</option>
+			        <option value="0">No</option>
+			         </select>          </div>
+ </div>
+
+
+
+                 <div style="margin-top:10px;" class="row">
+             <div class="col-sm-8">
+                         <label>Sys BP:</label>
+
+		       	<input type="text" placeholder="Enter BP value" name="sysbp" class="form-control input-sm" required >
+                                        </div>
+ </div>
+
+
+
+
+
+
+              <div style="margin-top:10px;" class="row">
+             <div class="col-sm-8">
+                         <label>Dia BP:</label>
+
+		       	<input type="text" placeholder="Enter BP value" name="disbp" class="form-control input-sm" required >
+                                        </div>
+ </div>
+
+
+
+
+
+              <div style="margin-top:10px;" class="row">
+             <div class="col-sm-8">
+                         <label>OGTT:</label>
+
+		       	<input type="text" placeholder="Enter OGTT value" name="ogtt" class="form-control input-sm" required >
+                                        </div>
+ </div>
+
+
+
+              <div style="margin-top:10px;" class="row">
+             <div class="col-sm-8">
+                         <label>Hemoglobin:</label>
+
+		       	<input type="text" placeholder="Enter Hemoglobin value" name="hmgbn" class="form-control input-sm" required >
+                                        </div>
+ </div>
+
+
+<div style="margin-top:10px;" class="row">
+             <div class="col-sm-8">
+                         <label>Sedentary Lifestyle:</label>
+
+
+                 <select class="form-control" id="weather" name="sl" required>
+                           		       <option value=""> --- Select ---</option>
+		       		          <option value="1">Yes</option>
+			        <option value="0">No</option>
+			         </select>          </div>
+ </div>
+
+
+<div style="margin-top:10px;" class="row">
+             <div class="col-sm-8">
+                         <label>Prediabetes:</label>
+
+
+                 <select class="form-control" id="weather" name="pd" required>
+                           		       <option value=""> --- Select ---</option>
+		       		          <option value="1">Yes</option>
+			        <option value="0">No</option>
+			         </select>          </div>
+ </div>
+
+
+
+                 <div style="margin-top:10px;" class="row">
+
+
+                    <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
+                    <div class="col-sm-8">
+                     <button class="btn btn-danger btn-sm">&nbsp;&nbsp;Predict&nbsp;&nbsp;</button>
+<br><br>
+
+                    </div>
+                </div>
+            </div>
+             <div class="col-sm-3">
+
+                  <div style="margin:6px" class="serv">
+
+
+
+
+           </div>
+
+
+         </div>
+
+            </div>
+        </div>
+</form>
+
+
+<br><br>
+<br><br><br><br>
+
+
+{%include "footer.html" %}
